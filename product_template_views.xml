@@ -1,0 +1,18 @@
+from odoo import fields, models
+
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    spx_cod_selected = fields.Boolean(
+        string='COD Selected',
+        copy=False,
+        help='Technical field reserved for tracking Cash on Delivery selection.'
+    )
+
+    spx_cod_fee_amount = fields.Monetary(
+        string='COD Fee Amount',
+        currency_field='currency_id',
+        copy=False,
+        help='Technical field reserved for tracking the Cash on Delivery fee.'
+    )

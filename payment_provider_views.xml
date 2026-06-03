@@ -1,0 +1,10 @@
+from odoo import fields, models
+
+
+class ProductTemplate(models.Model):
+    _inherit = 'product.template'
+
+    spx_cod_not_allowed = fields.Boolean(
+        string='Disable Cash on Delivery',
+        help='If enabled, this product should not be eligible for Cash on Delivery.'
+    )
